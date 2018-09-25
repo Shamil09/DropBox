@@ -1,0 +1,25 @@
+            idLogin.getEditor().textProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                    final TextField editor=idLogin.getEditor();
+                    final String selected =idLogin.getSelectionModel().getSelectedItem();
+                    if (selected==null || !selected.equals(editor.getText())){
+                        filterItems(newValue, idLogin, logins);
+                        idLogin.show();
+                        if (idLogin.getItems().size()==1){
+                            final String onlyOption = idLogin.getItems().get(0);
+                            final String current = editor.getText();
+                            if (onlyOption.length()>current.length()){
+                                editor.setText(onlyOption);
+                                //???
+                                Platform.runLater(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        editor.selectRange(current.length(),onlyOption.length());
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }
+            });
