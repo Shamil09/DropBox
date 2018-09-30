@@ -18,11 +18,11 @@
          <Insets bottom="20.0" />
       </VBox.margin>
    </Label>
-    <ComboBox fx:id="idLogin" blendMode="MULTIPLY" editable="true" onInputMethodTextChanged="#onKeyPresCBLog" onKeyPressed="#onKeyPresCBLog" onKeyReleased="#onKeyPresCBLog" onKeyTyped="#onKeyPresCBLog" opacity="0.9" prefHeight="30.0" prefWidth="231.0" promptText="Login" visibleRowCount="3">
+    <ComboBox fx:id="idLogin" blendMode="MULTIPLY" editable="true" onInputMethodTextChanged="#onKeyPresCBLog" onKeyPressed="#onKeyPresCBLog" onKeyReleased="#OnKeyReleasedCBLog" onKeyTyped="#onKeyPresCBLog" opacity="0.9" prefHeight="30.0" prefWidth="231.0" promptText="Login" visibleRowCount="3">
       <VBox.margin>
          <Insets bottom="10.0" />
       </VBox.margin></ComboBox>
-    <PasswordField fx:id="idPassword" blendMode="MULTIPLY" onAction="#onKeyRelePassF" onKeyReleased="#onKeyRelePassF" opacity="0.9" prefHeight="30.0" prefWidth="231.0" promptText="Password">
+    <PasswordField fx:id="idPassword" blendMode="MULTIPLY" onKeyReleased="#onKeyRelePassF" opacity="0.9" prefHeight="30.0" prefWidth="231.0" promptText="Password">
       <font>
          <Font size="14.0" />
       </font></PasswordField>

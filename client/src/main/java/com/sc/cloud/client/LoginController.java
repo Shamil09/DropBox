@@ -41,7 +41,7 @@ public class LoginController {
 //    }
     @FXML
     private void initialize() {
-        idLogin.setStyle("-fx-font-size:14"); //-fx-font-family: \"какой не будь шрифт";
+        idLogin.setStyle("-fx-font-size:14"); //-fx-font-family: "какой не будь шрифт";
         ObservableList<String> loginsFul=loginsList(ROOT_FOLDER,'D');
         ObservableList<String> logins=FXCollections.observableArrayList();
         for (String entry : loginsFul)
@@ -131,14 +131,18 @@ public class LoginController {
         else if (idLogin.getValue().equals("") || idPassword.getText().equals("")) idBtnGoIn.setDisable(true);
         else idBtnGoIn.setDisable(false);
     }
-
-    public void onKeyPresCBLog(KeyEvent keyEvent) {
-        btnActiv();
-        System.out.println("Из Лог ->"+idPassword.getText());
-    }
-
+    //отлавливаем нажатие кл. в поле пароль
     public void onKeyRelePassF(KeyEvent keyEvent) {
         btnActiv();
-        System.out.println(idPassword.getText());
+        System.out.println("Тут ловит "+idPassword.getText());
+    }
+    //отлавливаем отпускание кл. в поле логин
+    public void onKeyPresCBLog(KeyEvent keyEvent) {
+        btnActiv();
+        System.out.println("Тут НЕ ловит ->"+idPassword.getText());
+    }
+    //отлавливаем нажатие кл. в поле логин
+    public void OnKeyReleasedCBLog(KeyEvent keyEvent) {
+        System.out.println("А тут не отлавливает");
     }
 }
